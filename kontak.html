@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Islamic Boarding School</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <a href="#" class="logo">Ar-Rantisy Boarding School</a>
+    <input type="checkbox" id="menu-toggle" aria-label="Buka menu">
+    <label for="menu-toggle" class="burger">☰</label>
+
+    <nav>
+      <ul class="menu">
+
+        <li class="dropdown">
+          <a href="#profil">Profil</a>
+          <ul class="submenu">
+            <li><a href="#sejarah">Sejarah</a></li>
+            <li><a href="#visi-misi">Visi dan Misi</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#akademik">Akademik</a>
+          <ul class="submenu">
+            <li><a href="#kurikulum">Kurikulum</a></li>
+            <li><a href="#program-unggulan">Program Unggulan</a></li>
+            <li><a href="#jenjang-pendidikan">Jenjang Pendidikan</a></li>
+            <li><a href="#fasilitas">Fasilitas</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#informasi">Informasi</a>
+          <ul class="submenu">
+            <li><a href="#berita-kegiatan">Berita Kegiatan</a></li>
+            <li><a href="#galeri-foto">Galeri Foto</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#pendaftaran">Pendaftaran</a>
+          <ul class="submenu">
+            <li><a href="informasi_pendaftaran.html">Informasi Pendaftaran</a></li>
+            <li><a href="form-pendaftaran.html"</a>Form Pendaftaran</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+          </ul>
+      </ul>
+    </nav>
+  </header>
+
+ <main class="kontak">
+    <div class="kontak-container">
+
+      <h1 class="kontak-title">Hubungi Kami</h1>
+      <p class="kontak-sub">Ada pertanyaan seputar pendaftaran atau ingin berkunjung? Tim kami siap membantu.</p>
+      <span class="kontak-line"></span>
+
+      <!-- Kartu info -->
+      <div class="kontak-cards">
+        <div class="kontak-card">
+          <div class="kontak-icon">📍</div>
+          <h3>Alamat</h3>
+          <p>Jl. Contoh No. 123, Kecamatan Contoh, Kabupaten Jember, Jawa Timur</p>
+        </div>
+        <div class="kontak-card">
+          <div class="kontak-icon">📞</div>
+          <h3>Telepon / WhatsApp</h3>
+          <p>+62 812-3456-7890</p>
+        </div>
+        <div class="kontak-card">
+          <div class="kontak-icon">✉️</div>
+          <h3>Email</h3>
+          <p>info@arrantisy.sch.id</p>
+        </div>
+        <div class="kontak-card">
+          <div class="kontak-icon">🕐</div>
+          <h3>Jam Layanan</h3>
+          <p>Senin - Sabtu<br>08.00 - 16.00 WIB</p>
+        </div>
+      </div>
+
+      <!-- Form + info samping -->
+      <div class="kontak-body">
+
+        <div class="kontak-side">
+          <h2>Chat Langsung dengan Admisi</h2>
+          <p>Untuk respons paling cepat, hubungi kami lewat WhatsApp. Kami akan membalas pada jam layanan.</p>
+          <a href="https://wa.me/6281234567890" target="_blank" class="kontak-wa">💬 Chat Admisi via WhatsApp</a>
+
+          <h3>Ikuti Kami</h3>
+          <div class="kontak-social">
+            <a href="#" target="_blank">Instagram</a>
+            <a href="#" target="_blank">YouTube</a>
+            <a href="#" target="_blank">Facebook</a>
+          </div>
+        </div>
+
+        <div class="kontak-form">
+          <h2>Kirim Pesan</h2>
+          <form id="formKontak">
+            <label for="k-nama">Nama <span>*</span></label>
+            <input type="text" id="k-nama" placeholder="Masukkan nama lengkap" required>
+
+            <label for="k-wa">No. WhatsApp <span>*</span></label>
+            <input type="tel" id="k-wa" placeholder="Contoh: 08123456789" required>
+
+            <label for="k-pesan">Pesan / Pertanyaan <span>*</span></label>
+            <textarea id="k-pesan" rows="4" placeholder="Tulis pertanyaan Anda di sini…" required></textarea>
+
+            <button type="submit" class="kontak-submit">Kirim Pesan</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Pesan dikirim lewat WhatsApp admisi
+    document.getElementById('formKontak').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var pesan = 'Assalamu’alaikum, saya ingin bertanya.%0A%0A' +
+        'Nama: ' + encodeURIComponent(document.getElementById('k-nama').value) + '%0A' +
+        'No. WhatsApp: ' + encodeURIComponent(document.getElementById('k-wa').value) + '%0A' +
+        'Pertanyaan: ' + encodeURIComponent(document.getElementById('k-pesan').value);
+      window.open('https://wa.me/6281234567890?text=' + pesan, '_blank');
+    });
+  </script>
+</body>
+</html>

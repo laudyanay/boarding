@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Islamic Boarding School</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <a href="#" class="logo">Ar-Rantisy Boarding School</a>
+    <input type="checkbox" id="menu-toggle" aria-label="Buka menu">
+    <label for="menu-toggle" class="burger">☰</label>
+
+    <nav>
+      <ul class="menu">
+
+        <li class="dropdown">
+          <a href="#profil">Profil</a>
+          <ul class="submenu">
+            <li><a href="#sejarah">Sejarah</a></li>
+            <li><a href="#visi-misi">Visi dan Misi</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#akademik">Akademik</a>
+          <ul class="submenu">
+            <li><a href="#kurikulum">Kurikulum</a></li>
+            <li><a href="#program-unggulan">Program Unggulan</a></li>
+            <li><a href="#jenjang-pendidikan">Jenjang Pendidikan</a></li>
+            <li><a href="#fasilitas">Fasilitas</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#informasi">Informasi</a>
+          <ul class="submenu">
+            <li><a href="#berita-kegiatan">Berita Kegiatan</a></li>
+            <li><a href="#galeri-foto">Galeri Foto</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#pendaftaran">Pendaftaran</a>
+          <ul class="submenu">
+            <li><a href="informasi_pendaftaran.html">Informasi Pendaftaran</a></li>
+            <li><a href="form-pendaftaran.html">Form Pendaftaran</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+          </ul>
+      </ul>
+    </nav>
+  </header>
+
+ <main class="reg">
+    <div class="reg-wrap">
+
+      <!-- Kiri: teks perkenalan -->
+      <div class="reg-info">
+        <span class="reg-badge">★ Pendaftaran Dibuka 2027/2028</span>
+        <h1>Ar-Rantisy: <em>Islamic Boarding School</em></h1>
+        <p>
+          Pendidikan boarding yang memadukan ilmu pengetahuan dengan nilai-nilai Islami,
+          pembentukan karakter, dan kepemimpinan dalam lingkungan belajar yang nyaman.
+        </p>
+      </div>
+
+      <!-- Kanan: form -->
+      <div class="reg-card">
+        <h2>Form Pendaftaran 2027/2028</h2>
+        <p class="reg-sub">Isi data di bawah dan tim admisi kami akan segera menghubungi Anda.</p>
+
+        <form id="formDaftar">
+          <label for="nama">Nama Orang Tua / Wali <span>*</span></label>
+          <input type="text" id="nama" placeholder="Masukkan nama lengkap" required>
+
+          <label for="wa">No. WhatsApp <span>*</span></label>
+          <input type="tel" id="wa" placeholder="Contoh: 08123456789" required>
+
+          <label for="email">Email Aktif <span>*</span></label>
+          <input type="email" id="email" placeholder="Contoh: nama@email.com" required>
+
+          <label for="kota">Kota / Domisili <span>*</span></label>
+          <input type="text" id="kota" placeholder="Contoh: Jember, Surabaya, Malang…" required>
+
+          <label for="program">Pilihan Program Pendidikan <span>*</span></label>
+          <select id="program" required>
+            <option value="">— Pilih Program —</option>
+            <option>SD</option>
+            <option>SMP</option>
+            <option>SMA</option>
+          </select>
+
+          <button type="submit" class="reg-submit">Kirim &amp; Dapatkan Informasi</button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Tombol WhatsApp melayang -->
+  <a href="https://wa.me/6281234567890" target="_blank" class="wa-float">💬 Konsultasi Gratis</a>
+
+  <script>
+    // Saat form dikirim, data dibuka di WhatsApp admisi dengan pesan otomatis
+    document.getElementById('formDaftar').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var nama = document.getElementById('nama').value;
+      var wa = document.getElementById('wa').value;
+      var email = document.getElementById('email').value;
+      var kota = document.getElementById('kota').value;
+      var program = document.getElementById('program').value;
+
+      var pesan = 'Assalamu’alaikum, saya ingin mendaftar di Ar-Rantisy Boarding School.%0A%0A' +
+        'Nama Orang Tua/Wali: ' + encodeURIComponent(nama) + '%0A' +
+        'No. WhatsApp: ' + encodeURIComponent(wa) + '%0A' +
+        'Email: ' + encodeURIComponent(email) + '%0A' +
+        'Kota/Domisili: ' + encodeURIComponent(kota) + '%0A' +
+        'Program: ' + encodeURIComponent(program);
+
+      window.open('https://wa.me/6281234567890?text=' + pesan, '_blank');
+    });
+  </script>
+</body>
+</html>
